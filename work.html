@@ -1,0 +1,482 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Tanishq Dayma</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+		<style>
+			.logo {
+            max-width: 100%; /* Adjust the value to make the logo smaller */
+            height: 100px; /* Allow the logo to adjust its height proportionally */
+            margin-bottom: 1rem;  
+			object-fit: cover;
+        }
+		.skills {
+			margin-top: 5px;
+		}
+
+		.skills::before {
+			content: "Skills: ";
+			font-weight: bold;
+		}
+
+		.skills span:not(:last-child)::after {
+			content: ", ";
+		}
+        body{
+			
+            color: black;
+    
+            }
+            *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            --color: rgba(30, 30, 30);
+            --bgColor: rgba(245, 245, 245);
+            min-height: 100vh;
+            display: grid;
+            align-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            font-family: "Poppins", sans-serif;
+            color: var(--color);
+            background: var(--bgColor);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        ul.navbar li {
+            float: left;
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #555;
+        }
+
+        ul.timeline {
+            --col-gap: 2rem;
+            --row-gap: 2rem;
+            --line-w: 0.25rem;
+            display: grid;
+            grid-template-columns: var(--line-w) 1fr;
+            grid-auto-columns: max-content;
+            column-gap: var(--col-gap);
+            list-style: none;
+            width: min(60rem, 90%);
+            margin-inline: auto;
+        }
+
+        /* line */
+        ul.timeline::before {
+            content: "";
+            grid-column: 1;
+            grid-row: 1 / span 20;
+            background: rgb(225, 225, 225);
+            border-radius: calc(var(--line-w) / 2);
+        }
+
+        /* columns */
+        /* row gaps */
+        ul.timeline li:not(:last-child) {
+            margin-bottom: var(--row-gap);
+        }
+
+        /* card */
+        ul.timeline li {
+            grid-column: 2;
+            --inlineP: 1.5rem;
+            margin-inline: var(--inlineP);
+            grid-row: span 2;
+            display: grid;
+            grid-template-rows: min-content min-content min-content;
+        }
+
+        /* date */
+        ul.timeline li .date {
+            --dateH: 3rem;
+            height: var(--dateH);
+            margin-inline: calc(var(--inlineP) * -1);
+            text-align: center;
+            background-color: var(--accent-color);
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: grid;
+            place-content: center;
+            position: relative;
+            border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+        }
+
+        /* date flap */
+        ul.timeline li .date::before {
+            content: "";
+            width: var(--inlineP);
+            aspect-ratio: 1;
+            background: var(--accent-color);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+            position: absolute;
+            top: 100%;
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+            right: 0;
+        }
+
+        /* circle */
+        ul.timeline li .date::after {
+            content: "";
+            position: absolute;
+            width: 2rem;
+            aspect-ratio: 1;
+            background: var(--bgColor);
+            border: 0.3rem solid var(--accent-color);
+            border-radius: 50%;
+            top: 50%;
+            transform: translate(50%, -50%);
+            right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+        }
+
+        /* title descr */
+        ul.timeline li .title,
+        ul.timeline li .descr {
+            background: var(--bgColor);
+            position: relative;
+            padding-inline: 1.5rem;
+        }
+        ul.timeline li .title {
+            overflow: hidden;
+            padding-block-start: 1.5rem;
+            padding-block-end: 1rem;
+            font-weight: 500;
+        }
+        ul.timeline li .descr {
+            padding-block-end: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* summary */
+        ul.timeline li .summary {
+            font-style: italic;
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        /* shadows */
+        ul.timeline li .title::before,
+        ul.timeline li .descr::before {
+            content: "";
+            position: absolute;
+            width: 90%;
+            height: 0.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            left: 50%;
+            border-radius: 50%;
+            filter: blur(4px);
+            transform: translate(-50%, 50%);
+        }
+        ul.timeline li .title::before {
+            bottom: calc(100% + 0.125rem);
+        }
+        ul.timeline li .descr::before {
+            z-index: -1;
+            bottom: 0.25rem;
+        }
+
+        
+        @media (min-width: 40rem) {
+            ul.timeline {
+                grid-template-columns: 1fr var(--line-w) 1fr;
+            }
+            ul.timeline::before {
+                grid-column: 2;
+            }
+            ul.timeline li:nth-child(odd) {
+                grid-column: 1;
+            }
+            ul.timeline li:nth-child(even) {
+                grid-column: 3;
+            }
+            /* start second card */
+            ul.timeline li:nth-child(2) {
+                grid-row: 2/4;
+            }
+            ul.timeline li:nth-child(odd) .date::before {
+                clip-path: polygon(0 0, 100% 0, 100% 100%);
+                left: 0;
+            }
+            ul.timeline li:nth-child(odd) .date::after {
+                transform: translate(-50%, -50%);
+                left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+            }
+            ul.timeline li:nth-child(odd) .date {
+                border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+            }
+        }
+
+        .credits {
+            margin-top: 1rem;
+            text-align: right;
+        }
+        .credits a {
+            color: var(--color);
+        }
+        #nav li.active a {
+			color: #43B3E5; /* Specify the desired highlight color */
+		}
+        
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+        <nav id="nav">
+            <ul class="container">
+                <li id="home-nav"><a href="index.html">Home</a></li>
+                <li id="work-nav"><a href="work.html">Work</a></li>
+                <li id="edu-nav"><a href="education.html">Education</a></li>
+                <li id="portfolio-nav"><a href="portfolio.html">Portfolio</a></li>
+                <li id="contact-nav"><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+<!-- Work -->
+		
+		
+<!-- Work -->
+<article id="work" class="wrapper style2">
+    <div class="container">
+        <header>
+            <h2>Here's a snapshot of my professional journey:</h2>
+            <p>Driven, Diligent, Adaptive, Impactful, Committed </p>
+        </header>
+
+             
+        <!-- Texas A&M - Combined Experiences -->
+        <div class="col-12">
+            <section class="box style1">
+                <a href="https://www.tamu.edu/" style="margin-right: 20px;" target="_blank">
+                    <img src="images/tamu_logo.png" alt="Texas A&M University Logo" class="img-fluid logo">
+                </a>
+                <a href="https://hprc.tamu.edu/" style="margin-right: 20px;" target="_blank">
+                    <img src="images/hprc.png" alt="High Performance Research Computing Center Logo" class="img-fluid logo">
+                </a>
+                
+                <h3 style="margin-right: 10px;">
+                    <a href="https://www.hprc.tamu.edu/" target="_blank">High Performance Research Computing Center, Texas A&M University</a>
+                </h3>
+                <h4>[Graduate Assistant (Research)]</h4>
+                <ul style="text-align: left;">
+                    <li>Developed analytical dashboards, benefiting 2000+ researchers by enhancing customer service and resolving technical issues related to supercomputing clusters through the Linux command line.</li>
+                    <li>Optimized cluster workloads with strategic job scheduling and interactive apps (Jupyter Notebook, Slurm), resulting in significant resource efficiency gains.</li>
+                    <li>Streamlined over 40 short course workflows using automation tools (Jira, Excel, GitHub), reducing preparation time by 30%.</li>
+                    <li>Conducted instructional sessions on Data Management Practices, Linux, Slurm, and Jupyter Notebook.</li>
+                    <li>Orchestrated and managed diverse research workshops, overseeing budget formulation, conducting spending analysis, and ensuring detail-oriented coordination for highly successful events with 50+ attendees.</li>
+                </ul>
+
+                <!-- Achievements -->
+                <h4 style="text-align: left;">Achievement:</h4>
+                <ul style="text-align: left;">
+                    <li>Received tuition support from the department as a recognition of my work.</li>
+                </ul>
+
+                <p class="skills" style="text-align: left;">
+                    Python, JavaScript, Data PreProcessing, Workflow Automation with Jira and Excel, Workshop Coordination and Management, Mentorship and Guidance, Analytics, User Interactions, Git, Power BI
+                </p>
+            </section>
+        
+
+        
+        
+        
+        
+
+        <!-- Tata Consultancy Services - Data Engineer -->
+        <section class="box style1">
+            <a href="https://www.tcs.com/" style="margin-right: 20px;" target="_blank">
+                <img src="images/Tata_Consultancy_Services_Logo.svg.png" alt="Tata Consultancy Services Logo" class="img-fluid logo">
+            </a>
+            <h3 style="margin-right: 10px;">
+                <a href="https://www.tcs.com/" target="_blank">Tata Consultancy Services</a>
+            </h3>
+            <h4>[Systems Engineer]</h4>
+            <ul style="text-align: left;">
+                <li>Worked as a Data Engineer in a client-facing role for a top-tier global European Banking Client.</li>
+                <li>Led E2E migration of on-premise transactional workloads to Cisco UCS (cloud platform) using ETL tools (SQL, SSIS, SSRS), managing access controls, application refactoring, enhancing system uptime, and delivering a substantial 40% cost reduction.</li>
+                <li>Spearheaded a collaborative effort with Subject Matter Experts (SMEs), and cross-functional teams to seamlessly execute data migration from NAS shares while formulating architectural plans for future storage and analytical solutions, achieving a notable 70% increase in network bandwidth.</li>
+                <li>Facilitated Agile ceremonies, overseeing the execution of robust CI/CD pipelines and product strategy in Azure DevOps, integrating a successful Azure Data Lakes proof of concept (POC).</li>
+                <li>Created Tableau dashboards showcasing KPIs from complex data, generating actionable reports, identifying trends and anomalies, empowering leaders, clients, and non-technical stakeholders for data-driven decision-making.</li>
+                <li>Implemented a disaster recovery system, reducing downtime by 50% to provide 24/7 availability of critical applications.</li>
+                <li>Applied problem-solving to analyze complex technical issues during migration, ensuring prompt time-critical resolutions.</li>
+            </ul>
+            
+            <!-- Achievements -->
+            <h4 style="text-align: left;">Achievements:</h4>
+            <ul style="text-align: left;">
+                <li>Secured a position in the TCS Digital profile, earning a rapid promotion to Systems Engineer, bypassing two intermediate levels.</li>
+                <li>Received the Best Team Player award for exceptional contributions during NAS migration demonstrating collaboration skills.</li>
+                <li>Recognized with a client-side incentive for consistently delivering high-quality work, further highlighting excellence in client service.</li>
+            </ul>
+
+            <!-- <h4>Skills:</h4> -->
+            <p class="skills" style="text-align: left;">
+                Cloud Computing (Cisco UCS, Microsoft Azure), ETL Tools (SSIS, SSRS, ADF), SQL, Python, Shell Scripting, CI/CD (Jenkins, Azure DevOps), Tableau Visualization, Critical Thinking, Stakeholder Management, Microsoft SQL Server
+            </p>
+            
+        </section>
+
+
+        <!-- IIT Bombay - Research Intern -->
+        <section class="box style1">
+            <a href="https://www.iitb.ac.in/" style="margin-right: 20px;" target="_blank">
+                <img src="images/Indian_Institute_of_Technology_Bombay_Logo.png" alt="IIT Bombay Logo" class="img-fluid logo">
+            </a>
+            <h3 style="margin-right: 10px;">
+                <a href="https://www.iitb.ac.in/" target="_blank">Indian Institute of Technology (IIT), Bombay</a>
+            </h3>
+            <h4>[Research Intern]</h4>
+            <ul style="text-align: left;">
+                <li>Built a complex ETL pipeline for ingesting geospatial data into PostgreSQL database using R, SQL, QGIS, and GeoServer configuration to store data, improving the data accessibility and research efficiency by 30%</li>
+                <li>Presented insights from customer surveys to the product team, leading to the development of a highly requested feature for driving spatial analysis and visualization in urban planning projects, fostering more informed decision-making</li>
+            </ul>
+            <p class="skills" style="text-align: left;">
+                ETL, Python, Django, QGIS, JavaScript, Wagtail CMS, Geographic Information Systems (GIS), GeoServer, Leaflet (JavaScript)
+            </p>
+        </section>
+        
+
+        
+    </div>
+        
+    </div>
+</article>
+
+<!-- Separator Element -->
+<!-- <hr style="border-top: 2px solid #ddd; margin: 2rem 0;"> -->
+
+
+<!-- Timeline -->
+<article id="timeline" class="wrapper style2" style="padding: 2rem;">
+    <div class="container">
+
+        <header>
+            <h2>Professional Timeline</h2>
+        </header>
+
+        <div class="col-12">
+        <ul class="timeline">
+            <!-- Replace the content below with your professional journey -->
+            <li style="--accent-color:#2E86AB">
+                <div class="date">Aug 2023 - Present</div>
+                <div class="title">Graduate Assistant (Research)</div>
+                <div class="descr">Texas A&M University</div>
+                <div class="summary">Conducting advanced research projects, providing technical solutions and valuable insights to the research community.</div>
+            </li>
+            <li style="--accent-color:#56A3A6">
+                <div class="date">June 2023 - Aug 2024</div>
+                <div class="title">Graduate Intern (Summer)</div>
+                <div class="descr">Texas A&M University</div>
+                <div class="summary"><p>Experience in research, statistical analysis, visualization, data optimization, workflow automation, workshop management, and mentorship.</p></div>
+            </li>
+            <li style="--accent-color:#7C90DB">
+                <div class="date">Oct 2022 - May 2023</div>
+                <div class="title">Student Assistant</div>
+                <div class="descr">Texas A&M University</div>
+                <div class="summary">Contributed to the operations at the Office of Admissions and processed an average of nearly 100 admission documents daily, maintaining a high level of accuracy and ensuring completeness in submitted materials.</div>
+            </li>
+            <li style="--accent-color:#FBCA3E">
+                <div class="date">Oct 2020 - June 2024</div>
+                <div class="title">Systems Engineer</div>
+                <div class="descr">Tata Consultancy Services</div>
+                <div class="summary"><p>Orchestrated migration for 50+ banking apps and terabytes of data to a dynamic cloud platform, reducing hosting capital. Implemented robust CI/CD pipelines and crafted insightful dashboards.</p></div>
+            </li>
+            <li style="--accent-color:#E24A68">
+                <div class="date">Jan 2020 - May 2020</div>
+                <div class="title">Research Intern</div>
+                <div class="descr">Indian Institute of Technology (IIT) Bombay</div>
+                <div class="summary">Built complex ETL pipelines, improved research efficiency by 30%, and contributed insights to urban planning projects through spatial analysis and visualization.</div>
+            </li>
+        </ul>
+    </div>
+    </div>
+</article>
+
+<!-- Contact -->
+<article id="contact" class="wrapper style4">
+    <div class="col-12">
+        <!-- <hr /> -->
+        <h2>Find me on...</h2>
+        <ul class="social">
+            <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+            <!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+            <!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+            <li><a href="https://www.linkedin.com/in/tanishq-dayma/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <!-- <li><a href="#" class="icon brands fa-email"><span class="label">Tumblr</span></a></li> -->
+            <li><a href="mailto:tanishqdayma@gmail.com" target="_blank" class="icon brands fa-google-plus"><span class="label"></span></a></li>
+            <li><a href="https://github.com/tanishqdayma" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+        </ul>
+    </div>
+    <footer style="text-align:center;">
+        <ul id="copyright">
+            <!-- <li>&copy; 2024. All rights reserved.</li> -->
+            <li>&copy; 2024 Tanishq Dayma. All rights reserved.</li><li>Contact: <a href="mailto:tanishqdayma@gmail.com">tanishqdayma@gmail.com</a></li>
+        </ul>
+    </footer> 
+</article>
+
+
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    // Get the current URL path
+    var currentPath = window.location.pathname;
+
+    // Check for keywords in the URL to determine the active page
+    if (currentPath.includes("index.html")) {
+        document.getElementById("home-nav").classList.add("active");
+    } else if (currentPath.includes("work.html")) {
+        document.getElementById("work-nav").classList.add("active");
+    } else if (currentPath.includes("portfolio.html")) {
+        document.getElementById("portfolio-nav").classList.add("active");
+    } else if (currentPath.includes("contact.html")) {
+        document.getElementById("contact-nav").classList.add("active");
+    } else if (currentPath.includes("education.html")) {
+        document.getElementById("edu-nav").classList.add("active");
+    }
+</script>
+
+</body>
+</html>

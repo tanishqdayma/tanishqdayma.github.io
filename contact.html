@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Tanishq Dayma</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        #contact {
+            padding: 4em 0;
+        }
+
+        #contact header h2 {
+            margin-bottom: 2em;
+        }
+
+        .row {
+        display: flex;
+        align-items: center;
+        }
+
+        /* .box {
+  display: flex;
+  align-items: center;
+} */
+
+        #contact .row .col-4 img {
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        #contact .row .col-8 p {
+            text-align: justify;
+        }
+
+        #contact .contact-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2em;
+        }
+
+        #contact .contact-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #contact .contact-table td:first-child {
+            font-weight: bold;
+            color: #333;
+            width: 30%;
+        }
+
+        #contact .social {
+            margin-top: 1em;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        #contact .social li {
+            margin: 0 10px;
+        }
+
+        #contact .social a {
+            font-size: 1.5em;
+            color: #555;
+        }
+
+        #contact footer {
+            margin-top: 2em;
+            text-align: center;
+        }
+
+        #contact .box p {
+            margin-bottom: 1em;
+        }
+
+        /* Additional Styles */
+        #contact .box p b {
+            font-weight: bold;
+        }
+
+        #contact .box p.center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="is-preload home">
+
+<!-- Nav -->
+<nav id="nav">
+    <ul class="container">
+        <li id="home-nav"><a href="index.html">Home</a></li>
+        <li id="work-nav"><a href="work.html">Work</a></li>
+        <li id="edu-nav"><a href="education.html">Education</a></li>
+        <li id="portfolio-nav"><a href="portfolio.html">Portfolio</a></li>
+        <li id="contact-nav"><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<article id="contact" class="wrapper style2">
+    <div class="container">
+        <header>
+            <h2>Let's Connect!</h2>
+        </header>
+
+        <div class="row aln-center">
+            <!-- Picture on the Left -->
+            <div class="col-4 col-12-medium">
+                <img src="images/slack2.jpeg" alt="Your Profile Picture" class="image fit">
+            </div>
+
+            <!-- Contact Information Content -->
+            <div class="col-8 col-12-medium">
+                <section class="box style1">
+                    <p class="center" style="color: black;">
+                        <!-- <b>Ready to start a conversation?</b><br> -->
+                        <!-- Reach out to me using the following contact details: -->
+                        Feel free to connect with me for collaboration, inquiries, or just a friendly chat!
+                    </p>
+                    <table class="contact-table">
+                        <tr>
+                            <td>Email</td>
+                            <td><a href="mailto:tanishqdayma@gmail.com">tanishqdayma@gmail.com</a></td>
+                        </tr>
+                        <tr>
+                            <td>Institutional Email</td>
+                            <td><a href="mailto:tanishq.dayma@tamu.edu">tanishq.dayma@tamu.edu</a></td>
+                        </tr>
+                        <tr>
+                            <td>LinkedIn</td>
+                            <td><a href="https://www.linkedin.com/in/tanishq-dayma/" target="_blank">LinkedIn Profile</a></td>
+                        </tr>
+                        <tr>
+                            <td>GitHub</td>
+                            <td><a href="https://github.com/tanishqdayma" target="_blank">GitHub Profile</a></td>
+                        </tr>
+                    </table>
+                    <p class="center">
+                        <!-- <b>Feel free to connect with me for collaboration, inquiries, or just a friendly chat!</b> -->
+                    </p>
+                </section>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Social Icons -->
+<article id="contact" class="wrapper style4">
+    <div class="col-12">
+        <!-- <h2>Find me on...</h2> -->
+        <ul class="social">
+            <li><a href="https://www.linkedin.com/in/tanishq-dayma/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="mailto:tanishqdayma@gmail.com" target="_blank" class="icon brands fa-fw fa-google-plus"><span class="label">Email</span></a></li>
+            <li><a href="https://github.com/tanishqdayma" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        </ul>
+    </div>
+    <footer>
+        <ul id="copyright">
+            <li>&copy; 2024 Tanishq Dayma. All rights reserved.</li>
+            <li>Contact: <a href="mailto:tanishqdayma@gmail.com">tanishqdayma@gmail.com</a></li>
+        </ul>
+    </footer>
+</article>
+
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    // Get the current URL path
+    var currentPath = window.location.pathname;
+
+    // Check for keywords in the URL to determine the active page
+    if (currentPath.includes("index.html")) {
+        document.getElementById("home-nav").classList.add("active");
+    } else if (currentPath.includes("work.html")) {
+        document.getElementById("work-nav").classList.add("active");
+    } else if (currentPath.includes("portfolio.html")) {
+        document.getElementById("portfolio-nav").classList.add("active");
+    } else if (currentPath.includes("contact.html")) {
+        document.getElementById("contact-nav").classList.add("active");
+    } else if (currentPath.includes("education.html")) {
+        document.getElementById("edu-nav").classList.add("active");
+    }
+</script>
+
+</body>
+</html>
